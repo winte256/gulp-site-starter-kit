@@ -1,25 +1,23 @@
-@require "../node_modules/normalize.css/normalize.css"
-@require "flexbox-grid.styl"
+@import "../node_modules/normalize.css/normalize.css"
+@import "variables.styl"
 
 html
-    height: 100%
+  height 100%
 
 body
-    margin: 0
-    font-family: sans-serif
-    height: 100%
+  margin 0
+  font-family sans-serif
+  height 100%
 
 *
-    box-sizing: border-box
+  box-sizing border-box
 
 h1, h2, h3, h4, h5, h6
-    margin-top: 0
-    margin-bottom: 0
+  margin-top 0
+  margin-bottom 0
 
 input:focus
-    outline none
-
-
+  outline none
 
 @import "../blocks/**/xs/*"
 @import "../blocks/**/sm/*"
