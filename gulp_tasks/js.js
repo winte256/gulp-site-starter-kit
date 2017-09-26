@@ -1,10 +1,9 @@
 const gulp = require('gulp');
 const named = require('vinyl-named');
 const gulplog = require('gulplog');
-const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const { params, $ } = require('./config');
-const webpackCondig = require('../webpack.config');
+const { params, $, isDevelopment } = require('./config');
+const webpackConfig = require('../webpack.config');
 
 module.exports = (taskName) => (callback) => {
   let firstBuildReady = false;
@@ -29,7 +28,10 @@ module.exports = (taskName) => (callback) => {
       })),
     }))
     .pipe(named())
-    .pipe(webpackStream(webpackCondig, webpack, done))
+    .pipe(webpackStream({
+      config: webpackConfig,
+      watch: isDevelopment,
+    }, null, done))
     .pipe(gulp.dest(params.out))
     .on('data', () => {
       if (firstBuildReady) {

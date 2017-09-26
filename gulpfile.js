@@ -1,4 +1,5 @@
-const { params, gulp } = require('./gulp_tasks/config');
+const gulp = require('gulp');
+const { params } = require('./gulp_tasks/config');
 const { lazyRequireTask } = require('./gulp_tasks/utils');
 
 lazyRequireTask('server', './gulp_tasks/server');

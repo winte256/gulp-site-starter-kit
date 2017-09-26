@@ -8,7 +8,7 @@ module.exports = {
     levels: ['xs', 'sm', 'md', 'lg', 'xl'],
     html: ['pug/*.pug', 'blocks/**/*.pug', 'blocks/data.json'],
     blocksName: [
-      '',
+      'example',
     ],
     js: './javascript/index.js',
     json: 'blocks/**/*.json',

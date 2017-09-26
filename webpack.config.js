@@ -4,6 +4,8 @@ const webpack = require('webpack');
 
 const ifDevelopment = (a, b) => (isDevelopment ? a : b);
 const ifProduction = (a, b) => ifDevelopment(b, a);
+const removeEmpty = (items) => items.filter((item) => !!item);
+
 
 module.exports = {
   output: {
@@ -26,7 +28,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
+  plugins: removeEmpty([
     new webpack.NoEmitOnErrorsPlugin(),
     ifProduction(new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -35,5 +37,5 @@ module.exports = {
         unused: false,
       },
     })),
-  ],
+  ]),
 };

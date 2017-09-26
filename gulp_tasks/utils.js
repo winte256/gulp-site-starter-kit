@@ -11,11 +11,11 @@ module.exports = {
   },
   createStylByBem(blockName, bem = [], level) {
     return (
-      `media-breakpoint-up(${level}) {` +
-      `  .${blockName} {` +
+      `+media-breakpoint-up(${level}) {\n` +
+      `  .${blockName} {\n` +
       `${bem.map((element) => `    &${element} {\n\n    }`).join('\n')}` +
-      '  }' +
-      '}'
+      '  }\n' +
+      '}\n'
     );
   },
   getBemByHtml(html) {

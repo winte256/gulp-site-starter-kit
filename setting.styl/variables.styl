@@ -8,25 +8,24 @@ $breakpoints = {
 }
 
 media-breakpoint-up($breakpoint)
-    $width = $breakpoints[$breakpoint]
-    if $width == 0
-        {block}
-    else
-        @media screen and (min-width $width)
-            {block}
-
+  $width = $breakpoints[$breakpoint]
+  if $width == 0
+    {block}
+  else
+    @media screen and (min-width $width)
+      {block}
 
 media-breakpoint-down($breakpoint)
-    if $breakpoint == xs
-        $breakpoint = sm
-    else if $breakpoint == sm
-        $breakpoint = md
-    else if $breakpoint == md
-        $breakpoint = lg
-    else if $breakpoint == lg
-        $breakpoint = xl
+  if $breakpoint == xs
+    $breakpoint = sm
+  else if $breakpoint == sm
+    $breakpoint = md
+  else if $breakpoint == md
+    $breakpoint = lg
+  else if $breakpoint == lg
+    $breakpoint = xl
 
-    $width = $breakpoints[$breakpoint] - 1
+  $width = $breakpoints[$breakpoint] - 1
 
-    @media screen and (max-width $width)
-        {block}
+  @media screen and (max-width $width)
+    {block}

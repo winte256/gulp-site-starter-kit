@@ -26,7 +26,7 @@ module.exports = (taskName) => () => {
       locals: dataLocals,
     }))
     .pipe($.concat('merge.html'))
-    .pipe(through2((file, enc, cb) => {
+    .pipe(through2(function(file, enc, cb) {
       const contents = String(file.contents);
       const bemBlocks = getBemByHtml(contents);
 
