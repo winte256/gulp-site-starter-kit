@@ -1,0 +1,36 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-param-reassign": ["error", {
+      "props": false
+    }],
+    "arrow-parens": ["error", "always"],
+    "import/no-extraneous-dependencies": ["error", {"packageDir": "."}]
+  },
+  "settings": {
+    "ecmascript": 6,
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "globals": {
+    "Feature": true,
+    "Scenario": false,
+    "actor": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html"
+  ]
+}
