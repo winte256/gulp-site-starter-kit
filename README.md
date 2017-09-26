@@ -5,18 +5,10 @@
 ## Файловая структура верстки ##
 
 * blocks - BEM блоки
-* xs - основной уровень переопределения
-* sm - уровень доопределения для планшетов
-* md - уровень доопределения для стандартных экранов
-* lg - уровень доопределения для широких экранов
-* xl - уровень доопределения для широких экранов
 * blocks/{BEMBLOCK}/{BEMBLOCK}.jade - шаблон блока
-* blocks/{BEMBLOCK}/{BEMBLOCK}.json - данные блока
-* blocks/data.json - временный файл со всеми данными для блоков
-* node_modules - зависимости npm
 * public - временная папка со сборкой страницы проекта
-* bower.json - зависимости bower
 * gulpfile.js - задачи для gulp (сборщика верстки)
+* webpack.config.js - сборка javascript
 
 ### 1. Установка npm и зависимостей ###
 
@@ -24,31 +16,17 @@
 
 > npm install
 
-### 2. Установка bower зависимостей ###
-
-[http://bower.io/#install-bower](http://bower.io/#install-bower) - должен быть установлен глобально c помощью команды:
-
-> npm install -g bower
-
-должны быть установлены зависимости, команда:
-
-> bower install
-
 ### 3. Сборка проекта ###
 
-[https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) - должен быть установлен глобально с помощью команды:
+C помощью команды:
 
-> npm install --g gulp
-
-запуск сборки проекта, команда:
-
-> gulp
+> npm run gulp
 
 ## Файл заданий gulpfile.js ##
 
 Проект состоит из нескольких задач: default, server, build, html, css, images, js. Чтобы запустить конкретной задачу можно воспользоваться командой:
 
-> gulp имя_задачи
+> npm run gulp имя_задачи
 
 Задачи css, images, js собираются в папку html/public
 
